@@ -1,19 +1,18 @@
-# PromptWholesale AI — Production Build
+# PromptWholesale AI — GitHub-ready production site
 
-This package includes a complete GitHub Pages frontend, private product packs, Google Sheets/Apps Script backend, account flow, prompt builder, project saving, affiliate records, sales records, delivery records, legal pages, admin and reseller pages.
+Upload the contents of this extracted folder directly to the root of your GitHub repository.
 
-## What you replace
-1. Stripe Payment Links in `public-site/assets/js/config.js`.
-2. The deployed Apps Script Web App URL in the same file.
-3. Support email.
+## New in this build
+- Global landing-page navigation and app-wide sidebar navigation
+- Sales landing page modeled after the supplied luxury black/pink CEO dashboard mockup
+- Working marketplace search and category filters
+- Browser-based business, marketing, and sales demos
+- Pricing for one-time credits, Creator, Pro, Business Bundle, and individual prompt packs
+- Upgraded affiliate application page, marketing-kit preview, and commission explanation
+- Locked paid-product previews and verified delivery workflow
+- Mobile-responsive layouts
 
-## One-time secure setup
-Stripe Payment Links alone cannot protect files on a public GitHub Pages repository. Run the included setup once:
-- Create a Google Sheet and Apps Script project.
-- Paste `backend/apps-script.js`, run `setupProduction()`, and deploy as Web App.
-- Script Properties: `STRIPE_SECRET_KEY` and `PRODUCT_FILE_MAP` JSON.
-- Upload `private-product-packs/*.zip` to private Google Drive and map each product ID to its file ID.
-- Paste the Web App URL in config.js.
-- In Stripe, add each Payment Link success redirect: `https://YOUR-SITE/success.html?session_id={CHECKOUT_SESSION_ID}` and metadata `product_id` matching config.
+## Required configuration
+Edit `assets/js/config.js` and replace each `REPLACE_WITH_STRIPE_LINK` value. For secure delivery and real account/affiliate records, deploy `backend/apps-script.js` and add the Web App URL.
 
-Only publish `public-site/`. Never publish `private-product-packs/` or the backend secrets.
+Paid product ZIP files should remain in private Google Drive storage and must not be committed to a public GitHub Pages repository.
